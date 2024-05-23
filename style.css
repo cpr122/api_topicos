@@ -1,0 +1,85 @@
+.card{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    margin: 10px;
+ }
+ /* styleForm.css */
+ 
+ body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: palegoldenrod;
+ }
+ 
+ div {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+ }
+ 
+ h1 {
+    text-align: center;
+    color: #333;
+ }
+ 
+ .forU {
+    display: flex;
+    flex-direction: column;
+ }
+ 
+ label {
+    margin-bottom: 5px;
+    color: #333;
+ }
+ 
+ input {
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+ }
+ 
+ .a {
+    padding: 8px 20px;
+    margin-top: 10px;
+    border: none;
+    background-color: #226308;
+    color: #fff;
+    border-radius: 3px;
+    cursor: pointer;
+ }
+ .a:hover {
+    padding: 8px 20px;
+    margin-top: 10px;
+    border: none;
+    background-color: #37ac09;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+ }
+ .b {
+    padding: 8px 20px;
+    margin-top: 10px;
+    border: none;
+    background-color: #a71420;
+    color: #fff;
+    border-radius: 3px;
+    cursor: pointer;
+ }
+ .b:hover {
+    padding: 8px 20px;
+    margin-top: 10px;
+    border: none;
+    background-color: #f71111;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+ }
+ 
