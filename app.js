@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const userTable = document.getElementById('user-table');
 
     const fetchUsers = () => {
-        fetch('http://localhost:3000/',)
+        fetch('https://api-topicos-dnw6.onrender.com')
             .then(response => response.json())
             .then(data => {
                 userTable.innerHTML = '';
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     form.addEventListener('submit', (event) => {
         event.preventDefault();
         const nombre = document.getElementById('nombre').value;
-        fetch('http://localhost:3000/', {
+        fetch('https://api-topicos-dnw6.onrender.com', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.editUser = (id, nombre) => {
         const newName = prompt('Editar nombre:', nombre);
         if (newName) {
-            fetch('http://localhost:3000/', {
+            fetch('https://api-topicos-dnw6.onrender.com', {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json'
@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.deleteUser = (id) => {
         if (confirm('¿Estás seguro de que quieres eliminar este usuario?')) {
-            fetch('http://localhost:3000/', {
+            fetch('https://api-topicos-dnw6.onrender.com', {
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json'
