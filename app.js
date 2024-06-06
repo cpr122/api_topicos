@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 userTable.innerHTML = '';
                 data.forEach(user => {
                     const row = document.createElement('tr');
+                    row.className = 'table-row';
                     row.innerHTML = `
                         <td>${user.id}</td>
                         <td>${user.nombre}</td>
@@ -24,35 +25,43 @@ document.addEventListener('DOMContentLoaded', () => {
 
     form.addEventListener('submit', (event) => {
         event.preventDefault();
-        const nombre = document.getElementById('nombre').value;
-        fetch('https://api-topicos-dnw6.onrender.com', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ nombre })
-        })
-            .then(response => response.json())
-            .then(data => {
-                form.reset();
-                fetchUsers();
-            });
+        const nombre = document.getElementById('nombre').value.trim();
+        if (nombre) {
+            fetch('https://api-topicos-dnw6.onrender.com', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ nombre })
+            })
+                .then(response => response.json())
+                .then(data => {
+                    form.reset();
+                    fetchUsers();
+                })
+                .catch(error => console.error('Error:', error));
+        } else {
+            alert('El nombre no puede estar vacío');
+        }
     });
 
     window.editUser = (id, nombre) => {
         const newName = prompt('Editar nombre:', nombre);
-        if (newName) {
+        if (newName && newName.trim()) {
             fetch('https://api-topicos-dnw6.onrender.com', {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ id, nombre: newName })
+                body: JSON.stringify({ id, nombre: newName.trim() })
             })
                 .then(response => response.json())
                 .then(data => {
                     fetchUsers();
-                });
+                })
+                .catch(error => console.error('Error:', error));
+        } else {
+            alert('El nombre no puede estar vacío');
         }
     };
 
@@ -68,7 +77,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 .then(response => response.json())
                 .then(data => {
                     fetchUsers();
-                });
+                })
+                .catch(error => console.error('Error:', error));
         }
     };
 

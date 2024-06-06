@@ -1,85 +1,106 @@
-.card{
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
-    display: flex;
-    flex-direction: column;
-    padding: 1rem;
-    margin: 10px;
- }
- /* styleForm.css */
- 
- body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: palegoldenrod;
- }
- 
- div {
-    max-width: 400px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
- }
- 
- h1 {
-    text-align: center;
-    color: #333;
- }
- 
- .forU {
-    display: flex;
-    flex-direction: column;
- }
- 
- label {
-    margin-bottom: 5px;
-    color: #333;
- }
- 
- input {
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    box-sizing: border-box;
- }
- 
- .a {
-    padding: 8px 20px;
-    margin-top: 10px;
-    border: none;
-    background-color: #226308;
-    color: #fff;
-    border-radius: 3px;
-    cursor: pointer;
- }
- .a:hover {
-    padding: 8px 20px;
-    margin-top: 10px;
-    border: none;
-    background-color: #37ac09;
-    color: #fff;
-    border-radius: 5px;
-    cursor: pointer;
- }
- .b {
-    padding: 8px 20px;
-    margin-top: 10px;
-    border: none;
-    background-color: #a71420;
-    color: #fff;
-    border-radius: 3px;
-    cursor: pointer;
- }
- .b:hover {
-    padding: 8px 20px;
-    margin-top: 10px;
-    border: none;
-    background-color: #f71111;
-    color: #fff;
-    border-radius: 5px;
-    cursor: pointer;
- }
- 
+body {
+   font-family: Arial, sans-serif;
+   margin: 0;
+   padding: 0;
+   background-color: palegoldenrod;
+}
+
+h1, h2 {
+   text-align: center;
+   color: #333;
+   animation: fadeInDown 1s ease;
+}
+
+.table-row {
+   transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.table-row:hover {
+   background-color: #f1f1f1;
+   transform: scale(1.02);
+}
+
+.btn {
+   transition: transform 0.2s, background-color 0.3s;
+}
+
+.btn:hover {
+   transform: scale(1.1);
+   background-color: #007bff !important;
+}
+
+#nombre {
+   border: 2px solid #ccc;
+   transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+#nombre:focus {
+   border-color: #007bff;
+   box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+}
+
+#user-form {
+   background-color: #fff;
+   padding: 20px;
+   border-radius: 5px;
+   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+   animation: fadeInUp 1s ease;
+}
+
+#user-form .form-group label {
+   font-weight: bold;
+}
+
+#user-form .input-group {
+   display: flex;
+   align-items: center;
+}
+
+#user-form .input-group .btn {
+   margin-left: 10px;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+   from {
+       opacity: 0;
+       transform: translateY(-20px);
+   }
+   to {
+       opacity: 1;
+       transform: translateY(0);
+   }
+}
+
+@keyframes fadeInUp {
+   from {
+       opacity: 0;
+       transform: translateY(20px);
+   }
+   to {
+       opacity: 1;
+       transform: translateY(0);
+   }
+}
+
+@keyframes pulse {
+   0% {
+       transform: scale(1);
+   }
+   50% {
+       transform: scale(1.1);
+   }
+   100% {
+       transform: scale(1);
+   }
+}
+
+/* Button-specific animations */
+.btn-primary {
+   animation: pulse 2s infinite;
+}
+
+.btn-danger {
+   animation: pulse 2s infinite;
+   animation-delay: 1s;
+}

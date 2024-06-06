@@ -10,14 +10,14 @@
 </head>
 <body>
     <div class="container mt-5">
-        <h1>Gestión de Usuarios</h1>
-        <form id="user-form">
+        <h1 class="text-center">Gestión de Usuarios</h1>
+        <form id="user-form" class="mb-4">
             <div class="form-group">
                 <label for="nombre">Nombre:</label>
                 <div class="input-group">
                     <input type="text" id="nombre" class="form-control" required>
                     <div class="input-group-append">
-                        <button class="btn btn-dark" type="submit">
+                        <button id="a" class="btn btn-dark" type="submit">
                             <i class="fas fa-plus"></i>
                         </button>
                     </div>
@@ -25,8 +25,8 @@
             </div>
         </form>
         <h2 class="mt-5">Usuarios</h2>
-        <table class="table table-bordered mt-3">
-            <thead>
+        <table class="table table-bordered table-hover mt-3">
+            <thead class="thead-dark">
                 <tr>
                     <th>id</th>
                     <th>Nombre</th>
